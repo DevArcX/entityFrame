@@ -147,6 +147,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClasePrueba_2.0" />
     <None Include="EntityBD.edmx.diagram">
       <DependentUpon>EntityBD.edmx</DependentUpon>
     </None>
