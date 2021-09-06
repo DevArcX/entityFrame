@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmpresaModelStoreContainer" CdmEntityContainer="EmpresaEntities">
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="EmpresaModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="Idempresa" ColumnName="Idempresa" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="NomEmpresa" ColumnName="NomEmpresa" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="Celuar" ColumnName="Celuar" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="FecRegistro" ColumnName="FecRegistro" />
+          <ScalarProperty Name="UltMod" ColumnName="UltMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_Usuario">
+      <EntityTypeMapping TypeName="EmpresaModel.Log_Usuario">
+        <MappingFragment StoreEntitySet="Log_Usuario">
+          <ScalarProperty Name="idLog" ColumnName="idLog" />
+          <ScalarProperty Name="NomUsuario" ColumnName="NomUsuario" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="NomEmpresa" ColumnName="NomEmpresa" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="FecAccion" ColumnName="FecAccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="EmpresaModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="FecRegistro" ColumnName="FecRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

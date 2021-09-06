@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmpresaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Idempresa" />
+    </Key>
+    <Property Name="Idempresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RUC" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="NomEmpresa" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Persona" Type="varchar" MaxLength="50" />
+    <Property Name="Cuenta" Type="bit" />
+    <Property Name="Celuar" Type="char" MaxLength="9" />
+    <Property Name="Direccion" Type="varchar" MaxLength="150" />
+    <Property Name="FecRegistro" Type="date" />
+    <Property Name="UltMod" Type="date" />
+  </EntityType>
+  <EntityType Name="Log_Usuario">
+    <Key>
+      <PropertyRef Name="idLog" />
+    </Key>
+    <Property Name="idLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="Ruc" Type="char" MaxLength="11" />
+    <Property Name="NomEmpresa" Type="varchar" MaxLength="100" />
+    <Property Name="Accion" Type="varchar" MaxLength="50" />
+    <Property Name="FecAccion" Type="date" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Contraseña" Type="varbinary(max)" />
+    <Property Name="FecRegistro" Type="date" />
+  </EntityType>
+  <EntityContainer Name="EmpresaModelStoreContainer">
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log_Usuario" EntityType="Self.Log_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
