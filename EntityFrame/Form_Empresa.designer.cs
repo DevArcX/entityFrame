@@ -60,6 +60,7 @@ namespace EntityFrame
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.btnLogUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEmpresas = new System.Windows.Forms.Button();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -429,9 +430,9 @@ namespace EntityFrame
             this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(35, 536);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(21, 536);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(200, 40);
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(185, 40);
             this.btnNuevoUsuario.TabIndex = 20;
             this.btnNuevoUsuario.Text = "Nuevo Usuario";
             this.btnNuevoUsuario.UseVisualStyleBackColor = false;
@@ -446,9 +447,9 @@ namespace EntityFrame
             this.btnLogUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnLogUsuario.Location = new System.Drawing.Point(354, 536);
+            this.btnLogUsuario.Location = new System.Drawing.Point(230, 536);
             this.btnLogUsuario.Name = "btnLogUsuario";
-            this.btnLogUsuario.Size = new System.Drawing.Size(200, 40);
+            this.btnLogUsuario.Size = new System.Drawing.Size(185, 40);
             this.btnLogUsuario.TabIndex = 21;
             this.btnLogUsuario.Text = "Log Usuario";
             this.btnLogUsuario.UseVisualStyleBackColor = false;
@@ -463,13 +464,30 @@ namespace EntityFrame
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(652, 536);
+            this.btnSalir.Location = new System.Drawing.Point(670, 536);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(200, 40);
+            this.btnSalir.Size = new System.Drawing.Size(185, 40);
             this.btnSalir.TabIndex = 22;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnEmpresas
+            // 
+            this.btnEmpresas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(193)))), ((int)(((byte)(234)))));
+            this.btnEmpresas.FlatAppearance.BorderSize = 0;
+            this.btnEmpresas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(193)))), ((int)(((byte)(234)))));
+            this.btnEmpresas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnEmpresas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpresas.ForeColor = System.Drawing.Color.White;
+            this.btnEmpresas.Location = new System.Drawing.Point(438, 536);
+            this.btnEmpresas.Name = "btnEmpresas";
+            this.btnEmpresas.Size = new System.Drawing.Size(185, 40);
+            this.btnEmpresas.TabIndex = 23;
+            this.btnEmpresas.Text = "Empresas";
+            this.btnEmpresas.UseVisualStyleBackColor = false;
+            this.btnEmpresas.Click += new System.EventHandler(this.btnEmpresas_Click);
             // 
             // Form_Empresa
             // 
@@ -477,6 +495,7 @@ namespace EntityFrame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(894, 602);
+            this.Controls.Add(this.btnEmpresas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLogUsuario);
             this.Controls.Add(this.btnNuevoUsuario);
@@ -542,6 +561,7 @@ namespace EntityFrame
         private System.Windows.Forms.Button btnNuevoUsuario;
         private System.Windows.Forms.Button btnLogUsuario;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEmpresas;
     }
 }
 

@@ -83,6 +83,12 @@
     <Compile Include="Form_Empresa.designer.cs">
       <DependentUpon>Form_Empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ListaEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListaEmpresas.designer.cs">
+      <DependentUpon>Form_ListaEmpresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Log.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="VerOculPass.cs" />
     <EmbeddedResource Include="Form_Empresa.resx">
       <DependentUpon>Form_Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListaEmpresas.resx">
+      <DependentUpon>Form_ListaEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Log.resx">
       <DependentUpon>Form_Log.cs</DependentUpon>

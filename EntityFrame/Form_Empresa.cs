@@ -337,5 +337,11 @@ namespace EntityFrame
                 txbNomEmpresaBus.ResetText();txbNomEmpresaBus.Focus();
             }
         }
+
+        private void btnEmpresas_Click(object sender, EventArgs e)
+        {
+            Form_ListaEmpresas abrir = new Form_ListaEmpresas();
+            abrir.ShowDialog();
+        }
     }
 }
