@@ -142,6 +142,7 @@ namespace EntityFrame
             this.Name = "Form_NuevoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_NuevoUsuario";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_NuevoUsuario_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

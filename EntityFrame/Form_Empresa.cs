@@ -19,6 +19,7 @@ namespace EntityFrame
         {
             InitializeComponent();
             Controles(false);
+            cache_Empresa.RucActual = "";
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -112,6 +113,15 @@ namespace EntityFrame
                         db.Empresa.Remove(Em);
                         db.SaveChanges();
                         MessageBox.Show("la empresa: " + txbNomEmpresa.Text + " Se elimino correctamente");
+                        //insert log de la accion
+                        Log_Usuario lg = new Log_Usuario();
+                        lg.NomUsuario = cache_Usuario.NomUsuario;
+                        lg.Ruc = txbRuc.Text;
+                        lg.NomEmpresa = txbNomEmpresa.Text;
+                        lg.Accion = "Eliminado";
+                        lg.FecAccion = DateTime.Today.Date;
+                        db.Log_Usuario.Add(lg);
+                        db.SaveChanges();
                         btnNuevo.PerformClick();
                     }
                     catch (Exception ex)
@@ -147,6 +157,15 @@ namespace EntityFrame
                                 Em.UltMod = DateTime.Today.Date;
                                 db.SaveChanges();
                                 MessageBox.Show("la empresa: " + txbNomEmpresa.Text + " Se edito correctamente");
+                                //insert log de la accion
+                                Log_Usuario lg = new Log_Usuario();
+                                lg.NomUsuario = cache_Usuario.NomUsuario;
+                                lg.Ruc = txbRuc.Text;
+                                lg.NomEmpresa = txbNomEmpresa.Text;
+                                lg.Accion = "Edición";
+                                lg.FecAccion = DateTime.Today.Date;
+                                db.Log_Usuario.Add(lg);
+                                db.SaveChanges();
                                 btnEditar.PerformClick();
                             }
                             catch (Exception ex)
@@ -173,8 +192,18 @@ namespace EntityFrame
                                 Em.Direccion = txbDireccion.Text;
                                 Em.Cuenta = chbTieneCuenta.Checked;
                                 Em.FecRegistro = DateTime.Today.Date;
+                                db.Empresa.Add(Em);
                                 db.SaveChanges();
                                 MessageBox.Show("la empresa: "+txbNomEmpresa.Text+" Se registro correctamente");
+                                //insert log de la accion
+                                Log_Usuario lg = new Log_Usuario();
+                                lg.NomUsuario = cache_Usuario.NomUsuario;
+                                lg.Ruc = txbRuc.Text;
+                                lg.NomEmpresa = txbNomEmpresa.Text;
+                                lg.Accion = "Creacion";
+                                lg.FecAccion = DateTime.Today.Date;
+                                db.Log_Usuario.Add(lg);
+                                db.SaveChanges();
                                 Limpiar();
                             }
                             else
@@ -249,12 +278,13 @@ namespace EntityFrame
         private void Form_Empresa_Load(object sender, EventArgs e)
         {
             lblTitulo.Text = "Mantenimiento de empresa   |   Usuario, " + cache_Usuario.NomUsuario;
-            btnNuevoUsuario.Enabled = false;
         }
         private void buscar()
         {
             if (txbRucBus.Text != "" && txbNomEmpresaBus.Text == "" || txbNomEmpresaBus.Text != "" && txbRucBus.Text == "")
             {
+                string Ruc = txbRucBus.Text;
+                string Empresa = txbNomEmpresaBus.Text;
                 using (EmpresaEntities db = new EmpresaEntities())
                 {
                     IQueryable<Empresa> lst = from d in db.Empresa
@@ -264,28 +294,35 @@ namespace EntityFrame
                         lst = from d in db.Empresa
                               where d.NomEmpresa == txbNomEmpresaBus.Text
                               select d;
+                        txbRuc.Text = (from d in db.Empresa where d.NomEmpresa == Empresa select d.RUC.ToString()).FirstOrDefault();
+                        cache_Empresa.RucActual = (from d in db.Empresa where d.NomEmpresa == Empresa select d.RUC.ToString()).FirstOrDefault();
+                        txbNomEmpresa.Text = (from d in db.Empresa where d.NomEmpresa == Empresa select d.NomEmpresa.ToString()).FirstOrDefault();
+                        txbPersona.Text = (from d in db.Empresa where d.NomEmpresa == Empresa select d.Persona.ToString()).FirstOrDefault();
+                        chbTieneCuenta.Checked = Convert.ToBoolean((from d in db.Empresa where d.RUC == Empresa select d.Cuenta).FirstOrDefault());
+                        txbCelular.Text = (from d in db.Empresa where d.NomEmpresa == Empresa select d.Celuar).FirstOrDefault();
+                        txbDireccion.Text = (from d in db.Empresa where d.NomEmpresa == Empresa select d.Direccion).FirstOrDefault();
+                        Controles(false);
+                        btnEliminar.Enabled = true;
+                        txbRuc.Enabled = false;
                     }
                     if (txbRucBus.Text != "")
                     {
                         lst = from d in db.Empresa
                               where d.RUC == txbRucBus.Text
                               select d;
-                    }
-
-                    if (lst.Count() > 0)
-                    {
-                        txbRuc.Text = lst.ElementAt(1).ToString();
-                        cache_Empresa.RucActual = lst.ElementAt(1).ToString();
-                        txbNomEmpresa.Text = lst.ElementAt(2).ToString();
-                        txbPersona.Text = lst.ElementAt(3).ToString();
-                        chbTieneCuenta.Checked = Convert.ToBoolean(lst.ElementAt(4));
-                        txbCelular.Text = lst.ElementAt(5).ToString();
-                        txbDireccion.Text = lst.ElementAt(6).ToString();
+                        txbRuc.Text = (from d in db.Empresa where d.RUC == Ruc select d.RUC.ToString()).FirstOrDefault();
+                        cache_Empresa.RucActual = (from d in db.Empresa where d.RUC == Ruc select d.RUC.ToString()).FirstOrDefault();
+                        txbNomEmpresa.Text = (from d in db.Empresa where d.RUC == Ruc select d.NomEmpresa.ToString()).FirstOrDefault();
+                        txbPersona.Text = (from d in db.Empresa where d.RUC == Ruc select d.Persona.ToString()).FirstOrDefault();
+                        chbTieneCuenta.Checked = Convert.ToBoolean((from d in db.Empresa where d.RUC == Ruc select d.Cuenta).FirstOrDefault());
+                        txbCelular.Text = (from d in db.Empresa where d.RUC == Ruc select d.Celuar).FirstOrDefault();
+                        txbDireccion.Text = (from d in db.Empresa where d.RUC == Ruc select d.Direccion).FirstOrDefault();
                         Controles(false);
                         btnEliminar.Enabled = true;
                         txbRuc.Enabled = false;
                     }
-                    else
+
+                    if (lst.Count() == 0)
                     {
                         MessageBox.Show("La empresa en busqueda no existe");
                         txbRucBus.ResetText();

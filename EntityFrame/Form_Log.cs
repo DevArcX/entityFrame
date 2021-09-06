@@ -44,5 +44,12 @@ namespace EntityFrame
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Form_Log_Paint(object sender, PaintEventArgs e)
+        {
+            int AnchoBorde = 2;
+            Color ColorBorde = Color.FromArgb(244, 187, 19);
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, ColorBorde, AnchoBorde, ButtonBorderStyle.Solid, ColorBorde, AnchoBorde, ButtonBorderStyle.Solid, ColorBorde, AnchoBorde, ButtonBorderStyle.Solid, ColorBorde, AnchoBorde, ButtonBorderStyle.Solid);
+        }
     }
 }

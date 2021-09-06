@@ -64,9 +64,12 @@ namespace EntityFrame
             this.dgvLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLog.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(58)))));
+            this.dgvLog.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.dgvLog.Location = new System.Drawing.Point(25, 58);
+            this.dgvLog.MultiSelect = false;
             this.dgvLog.Name = "dgvLog";
             this.dgvLog.ReadOnly = true;
+            this.dgvLog.RowHeadersVisible = false;
             this.dgvLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLog.Size = new System.Drawing.Size(595, 259);
             this.dgvLog.TabIndex = 24;
@@ -96,6 +99,7 @@ namespace EntityFrame
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Log";
             this.Load += new System.EventHandler(this.Form_Log_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form_Log_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
             this.ResumeLayout(false);
 
@@ -104,7 +108,7 @@ namespace EntityFrame
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dgvLog;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.DataGridView dgvLog;
     }
 }
