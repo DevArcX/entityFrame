@@ -60,10 +60,10 @@ namespace EntityFrame
             this.dgvLog.AllowUserToResizeColumns = false;
             this.dgvLog.AllowUserToResizeRows = false;
             this.dgvLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLog.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(63)))), ((int)(((byte)(67)))));
+            this.dgvLog.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.dgvLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLog.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(58)))));
+            this.dgvLog.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.dgvLog.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.dgvLog.Location = new System.Drawing.Point(25, 58);
             this.dgvLog.MultiSelect = false;
@@ -89,7 +89,7 @@ namespace EntityFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(58)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(661, 387);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvLog);

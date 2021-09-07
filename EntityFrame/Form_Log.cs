@@ -38,6 +38,8 @@ namespace EntityFrame
             {
                 EmpresaEntities db = new EmpresaEntities();
                 dgvLog.DataSource = db.Log_Usuario.ToList();
+                ordenarDGV();
+                dgvLog.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -45,6 +47,14 @@ namespace EntityFrame
             }
         }
 
+        private void ordenarDGV()
+        {
+            dgvLog.Columns[0].Visible = false;
+            dgvLog.Columns["NomUsuario"].HeaderText = "Usuario";
+            dgvLog.Columns["Ruc"].HeaderText = "Ruc";
+            dgvLog.Columns["Nomempresa"].HeaderText = "Empresa";
+            dgvLog.Columns["FecAccion"].HeaderText = "Fecha";
+        }
         private void Form_Log_Paint(object sender, PaintEventArgs e)
         {
             int AnchoBorde = 2;
