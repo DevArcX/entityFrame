@@ -13,6 +13,7 @@ namespace EntityFrame
         public SqlConnection conexion;
 
         //comentario de pau-edit
+        //comentario de Cris-Edit
         public void CadenaConexion()
         {
             conexion = new SqlConnection(@"
