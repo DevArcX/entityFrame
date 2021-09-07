@@ -12,6 +12,7 @@ namespace EntityFrame
     {
         public SqlConnection conexion;
 
+        //comentario de pau-edit
         public void CadenaConexion()
         {
             conexion = new SqlConnection(@"
