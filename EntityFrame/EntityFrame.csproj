@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="cache_Empresa.cs" />
     <Compile Include="cache_Usuario.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Empresa.cs">
       <DependentUpon>EntityBD.tt</DependentUpon>
